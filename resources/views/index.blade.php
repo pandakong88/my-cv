@@ -528,235 +528,152 @@
           }
       </style>
 
-      <div class="unslate_co--section" id="testimonial-section">
+      <div class="unslate_co--section " id="certificate-section">
         <div class="container">
           <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Happy Clients</span></h2>
-            <span class="gsap-reveal"> <img src="{{ asset('assets/images/divider.png') }}" alt="divider" width="76"></span>
+            <h2 class="heading-h2 text-center divider">
+              <span class="gsap-reveal">My Certificates</span>
+            </h2>
+            <span class="gsap-reveal">
+              <img src="{{ asset('assets/images/divider.png') }}" alt="divider" width="76">
+            </span>
           </div>
+
+          <!-- Carousel Mulai -->
+          <div class="owl-carousel testimonial-slider" data-aos="fade-up">
+            
+            <!-- Sertifikat 1 -->
+            <div>
+              <div class="testimonial-inner-bg p-4 row align-items-center text-start">
+                <div class="col-12 col-md-4 mb-3 mb-md-0 text-center">
+                  <img src="{{ asset('assets/images/work_9_a_md.jpg') }}" alt="..." class="img-fluid rounded shadow" style="max-width: 250px;">
+                </div>
+                <div class="col-12 col-md-8">
+                  <h3 class="mb-2 fw-bold">Laravel Fundamental</h3>
+                  <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat minus dolorem sed optio explicabo laboriosam odit a nobis, amet iusto numquam, non, blanditiis harum ullam. Magnam, doloremque. Quae, doloremque maiores.</p>
+                  <span class="text-muted fst-italic">Diperoleh pada Maret 2025</span>
+                </div>
+              </div>
+            </div>
+              <div class="testimonial-inner-bg p-4 row align-items-center text-start">
+                <div class="col-12 col-md-4 mb-3 mb-md-0 text-center">
+                  <img src="{{ asset('assets/images/work_9_a_md.jpg') }}" alt="..." class="img-fluid rounded shadow" style="max-width: 250px;">
+                </div>
+                <div class="col-12 col-md-8">
+                  <h3 class="mb-2 fw-bold">Pytonnn</h3>
+                  <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sunt, reprehenderit sit ipsam tenetur blanditiis? Nisi quos iste praesentium. Officia enim quam reiciendis dicta nesciunt commodi consequuntur quibusdam itaque eligendi!</p>
+                  <span class="text-muted fst-italic">Diperoleh pada Maret 2025</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tambah sertifikat lain di sini -->
+
+          </div>
+          <!-- Carousel Selesai -->
         </div>
-
-        <div class="owl-carousel testimonial-slider" data-aos="fade-up">
-          <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">&ldquo;</span>
-                <blockquote>
-                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                </blockquote>
-              </div>
-              
-              <div class="testimonial-author-info">
-                 <img src="{{ asset('assets/images/person_man_1.jpg') }}" alt="Image">
-                <h3>Eric Ingram</h3>
-                <span class="d-block position">Product Designer @facebook</span>
-              </div>
-
-            </div>
-          </div>
-          <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">&ldquo;</span>
-                <blockquote>
-                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                </blockquote>
-              </div>
-              
-              <div class="testimonial-author-info">
-                 <img src="{{ asset('assets/images/person_man_2.jpg') }}" alt="Image">
-                <h3>Ryan Mullins</h3>
-                <span class="d-block position">Product Designer @Shopify</span>
-              </div>
-
-            </div>
-          </div>
-          <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">&ldquo;</span>
-                <blockquote>
-                  Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-                </blockquote>
-              </div>
-              
-              <div class="testimonial-author-info">
-                 <img src="{{ asset('assets/images/person_woman_1.jpg') }}" alt="Image">
-                <h3>Erica Miller</h3>
-                <span class="d-block position">Product Designer @Twitter</span>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
       </div>
       <!-- END testimonial -->
+      <style>
+        .testimonial-inner-bg {
+          position: relative;
+          background-color: #222; /* atau warna gelap sesuai tema */
+          border-bottom: 4px solid #e63946; /* warna merah aksen */
+        }
+        .testimonial-inner-bg::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 20px;
+          right: 20px;
+          height: 4px;
+          /* background-color: #e63946; */
+          border-radius: 2px;
+        }
+        .testimonial-inner-bg {
+          transition: all 0.3s ease;
+        }
+        .testimonial-inner-bg:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+      </style>
 
-      <div class="unslate_co--section" id="journal-section">
+     
+
+      <!-- Font Awesome (penting untuk ikon sosial) -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+      <footer id="footer" class="unslate_co--footer text-light py-4 mt-9">
         <div class="container">
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Journal</span></h2>
-            <span class="gsap-reveal"> <img src="{{ asset('assets/images/divider.png') }}" alt="divider" width="76"></span>
-          </div>
-
-          
-          <div class="row gutter-v4 align-items-stretch">
-            <div class="col-sm-6 col-md-6 col-lg-8 blog-post-entry" data-aos="fade-up" data-aos-delay="0">
-
-              <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
-                <div class="overlay">
-                  <div class="portfolio-item-content">
-                    <h3>A Mounteering Guide For Beginners</h3>
-                    <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
-                  </div>
-                </div>
-                 <img src="{{ asset('assets/images/post_1.jpg') }}" class="lazyload" alt="Image" />
-              </a>
-
-
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
-              <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
-                <div class="overlay">
-                  <div class="portfolio-item-content">
-                    <h3>A Mounteering Guide For Beginners</h3>
-                    <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
-                  </div>
-                </div>
-                 <img src="{{ asset('assets/images/post_2.jpg') }}" class="lazyload" alt="Image" />
-              </a>
-            </div>
-
-
-            <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="0">
-
-              <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
-                <div class="overlay">
-                  <div class="portfolio-item-content">
-                    <h3>A Mounteering Guide For Beginners</h3>
-                    <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
-                  </div>
-                </div>
-                 <img src="{{ asset('assets/images/post_3.jpg') }}" class="lazyload" alt="Image" />
-              </a>
-
-
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="100">
-              <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
-                <div class="overlay">
-                  <div class="portfolio-item-content">
-                    <h3>A Mounteering Guide For Beginners</h3>
-                    <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
-                  </div>
-                </div>
-                 <img src="{{ asset('assets/images/post_4.jpg') }}" class="lazyload" alt="Image" />
-              </a>
-            </div>
-
-            <div class="col-sm-6 col-md-6 col-lg-4 blog-post-entry" data-aos="fade-up" data-aos-delay="200">
-              <a href="blog-single.html" class="grid-item blog-item w-100 h-100">
-                <div class="overlay">
-                  <div class="portfolio-item-content">
-                    <h3>A Mounteering Guide For Beginners</h3>
-                    <p class="post-meta">By Joefrey <span class="small">&bullet;</span> 5 mins read</p>
-                  </div>
-                </div>
-                 <img src="{{ asset('assets/images/post_5.jpg') }}" class="lazyload" alt="Image" />
-              </a>
-            </div>
-
-
-          </div>
-
-        </div>
-      </div>
-      <!-- END blog posts -->
-
-
-      <div class="unslate_co--section" id="contact-section">
-        <div class="container">
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Get In Touch</span></h2>
-            <span class="gsap-reveal"> <img src="{{ asset('assets/images/divider.png') }}" alt="divider" width="76"></span>
-          </div>
-
-
-          <div class="row justify-content-between">
+          <div class="row gy-4 align-items-center text-center text-md-start">
             
-            <div class="col-md-6">
-              <form method="post" class="form-outline-style-v1" id="contactForm">
-                <div class="form-group row mb-0">
-
-                  <div class="col-lg-6 form-group gsap-reveal">
-                    <label for="name">Name</label>
-                    <input name="name" type="text" class="form-control" id="name">
-                  </div>
-                  <div class="col-lg-6 form-group gsap-reveal">
-                    <label for="email">Email</label>
-                    <input name="email" type="email" class="form-control" id="email">
-                  </div>
-                  <div class="col-lg-12 form-group gsap-reveal">
-                    <label for="message">Write your message...</label>
-                    <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
-                  </div>
-                </div>
-                <div class="form-group row gsap-reveal">
-                    <div class="col-md-12 d-flex align-items-center">
-                      <input type="submit" class="btn btn-outline-pill btn-custom-light mr-3" value="Send Message">
-                      <span class="submitting"></span>
-                    </div>
-                  </div>
-              </form>
-              <div id="form-message-warning" class="mt-4"></div> 
-              <div id="form-message-success">
-                Your message was sent, thank you!
-              </div>
-
-            </div>
-
+            <!-- Branding -->
             <div class="col-md-4">
-              <div class="contact-info-v1">
-                <div class="gsap-reveal d-block">
-                  <span class="d-block contact-info-label">Email</span>
-                  <a href="#" class="contact-info-val">info@yourdomain.com</a>
-                </div>
-                <div class="gsap-reveal d-block">
-                  <span class="d-block contact-info-label">Phone</span>
-                  <a href="#" class="contact-info-val">+12 345 6789 012</a>
-                </div>
-                <div class="gsap-reveal d-block">
-                  <span class="d-block contact-info-label">Address</span>
-                  <address class="contact-info-val">273 South Riverview Rd. <br> New York, NY 10011</address>
-                </div>
-              </div>
+              <h5 class="fw-bold mb-2">Kontak Saya<span class="text-danger">.</span></h5>
+              <p class="text-muted small mb-0">Tertarik kerja sama? Hubungi saya melalui media sosial atau email.</p>
             </div>
 
-          </div>
-        </div>
-      </div>
-      </div> <!-- END .unslate_co-site-inner -->
-
-      <footer class="unslate_co--footer unslate_co--section">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-7">
-              
-              <div class="footer-site-logo"><a href="#">Unfold<span>.</span></a></div>
-
-              <ul class="footer-site-social">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Dribbble</a></li>
-                <li><a href="#">Behance</a></li>
+            <!-- Social Media -->
+            <div class="col-md-4">
+              <ul class="list-inline d-flex justify-content-center justify-content-md-start flex-wrap gap-3 mb-0">
+                <li class="list-inline-item">
+                  <a href="#" class="text-light fs-5" title="GitHub">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="text-light fs-5" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="text-light fs-5" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#" class="text-light fs-5" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="mailto:emailkamu@example.com" class="text-light fs-5" title="Email">
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                </li>
               </ul>
-
             </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-4">
+              <p class="small mb-1"><i class="fas fa-map-marker-alt me-2 text-danger"></i>Yogyakarta, Indonesia</p>
+              <p class="small mb-0"><i class="fas fa-envelope me-2 text-danger"></i><a href="mailto:emailkamu@example.com" class="text-light text-decoration-none"> emailkamu@example.com</a></p>
+            </div>
+          </div>
+
+          <hr class="my-4 border-secondary">
+
+          <div class="text-center small text-muted">
+            &copy; {{ date('Y') }} Dibuat dengan <i class="fas fa-heart text-danger"></i> oleh <strong>Kamu</strong>
           </div>
         </div>
       </footer>
+
+      <style>
+      #footer a:hover {
+        color: #e63946 !important;
+        transition: 0.3s;
+      }
+      #footer i {
+        transition: transform 0.3s;
+      }
+      #footer i:hover {
+        transform: scale(1.2);
+      }
+      
+      </style>
+
 
       
     </div>
