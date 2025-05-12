@@ -18,7 +18,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/vendor/jquery.fancybox.min.css') }}">
 
-    
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"> 
@@ -110,8 +112,8 @@
           <div class="row align-items-center">
               
             <div class="col-md-7 mx-auto text-center">
-              <h1 class="heading gsap-reveal-hero">Unfold</h1>
-              <h2 class="subheading gsap-reveal-hero">I’m Glenn Chapman Hoyer A Product Designer Based In San Francisco</h2>
+              <h1 class="heading gsap-reveal-hero">Arjunanda</h1>
+              <h2 class="subheading gsap-reveal-hero">Programmer muda dengan semangat inovasi, siap berkarya dan berkembang di dunia teknologi.</h2>
             </div>
 
           </div>
@@ -138,7 +140,7 @@
 
           <div class="portfolio-wrapper">
 
-            <div class="d-flex align-items-center mb-4 gsap-reveal gsap-reveal-filter">
+            {{-- <div class="d-flex align-items-center mb-4 gsap-reveal gsap-reveal-filter">
               <h2 class="mr-auto heading-h2"><span class="gsap-reveal">Portfolio</span></h2>
 
               <a href="#" class="text-white js-filter d-inline-block d-lg-none">Filter</a>
@@ -152,7 +154,7 @@
                   <a href="#" data-filter=".packaging">Packaging</a>
                 </div>
               </div>
-            </div>
+            </div> --}}
 
 
             
@@ -313,17 +315,21 @@
       </div>
 
       <style>
-        .logo-slider .logo-v1 img {
-          max-height: 100px;
-          width: auto;
-          margin: 0 auto;
-          display: block;
-          object-fit: contain;
-        }
         .logo-slider .logo-v1 {
-          padding: 20px;
-          text-align: center;
+          height: 125px; /* atau tinggi yang kamu suka */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 15px;
         }
+
+        .logo-slider .logo-v1 img {
+          max-height: 100%;  /* biar pas di container */
+          max-width: 100%;
+          object-fit: contain;
+          aspect-ratio: 1/1; /* bikin kotak agar seragam, opsional */
+        }
+
       </style>
 
       <div class="unslate_co--section" id="about-section">
@@ -344,133 +350,183 @@
               </figure>
             </div>
             <div class="col-lg-4 pr-lg-5">
-              <h3 class="mb-4 heading-h3"><span class="gsap-reveal">We can make it together</span></h3>
-              <p class="lead gsap-reveal">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there <a href="#">live the blind</a> texts. </p>
-              <p class="mb-4 gsap-reveal">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-              <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Download my CV</a></p>
+              <h3 class="mb-4 heading-h3"><span class="gsap-reveal">Crafting code, shaping ideas</span></h3>
+              <p class="lead gsap-reveal">Saya adalah lulusan Sistem Informasi dengan ketertarikan tinggi pada web development dan solusi digital berbasis Laravel & CodeIgniter.</p>
+              <p class="mb-4 gsap-reveal">Berpengalaman membangun website fungsional menggunakan PHP, JavaScript, serta memahami OOP, integrasi API, dan testing. Selalu siap belajar, beradaptasi, dan tumbuh bersama teknologi.</p>
+              <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Download CV</a></p>
+              <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Lihat CV</a></p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="unslate_co--section" id="services-section">
-        <div class="container">
+    <div class="unslate_co--section" id="services-section">
+      <div class="container">
 
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Services</span></h2>
-            <span class="gsap-reveal"> <img src="{{ asset('assets/images/divider.png') }}" alt="divider" width="76"></span>
+        <div class="section-heading-wrap text-center mb-5">
+          <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Services</span></h2>
+          <span class="gsap-reveal"> 
+            <img src="{{ asset('assets/images/divider.png') }}" alt="divider" width="76">
+          </span>
+        </div>
+
+        <div class="row gutter-v3">
+          
+          <!-- Web Development -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
+              <div class="wrap-icon mb-3">
+                <img src="{{ asset('assets/images/svg/004-percentage.svg') }}" alt="Image" width="45">
+              </div>
+              <h3>Web <br> Development</h3>
+              <p>Membangun website dinamis dan responsif menggunakan HTML, CSS, JavaScript, dan framework PHP seperti Laravel & CI.</p>
+            </div> 
           </div>
 
-          <div class="row gutter-v3">
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
-                <div class="wrap-icon mb-3">
-                   <img src="{{ asset('assets/images/svg/001-options.svg') }}" alt="Image" width="45">
-                </div>
-                <h3>Digital <br> Strategy</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-              </div> 
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
-                <div class="wrap-icon mb-3">
-                   <img src="{{ asset('assets/images/svg/002-chat.svg') }}" alt="Icon" width="45">
-                </div>
-                <h3>Web <br> Design</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-              </div> 
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
-                <div class="wrap-icon mb-3">
-                   <img src="{{ asset('assets/images/svg/003-contact-book.svg') }}" alt="Image" class="img-fluid" width="45">
-                </div>
-                <h3>User <br> Experience</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-              </div> 
-            </div>
-
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
-                <div class="wrap-icon mb-3">
-                   <img src="{{ asset('assets/images/svg/004-percentage.svg') }}" alt="Image" width="45">
-                </div>
-                <h3>Web <br> Development</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-              </div> 
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
-                <div class="wrap-icon mb-3">
-                   <img src="{{ asset('assets/images/svg/006-goal.svg') }}" alt="Image" width="45">
-                </div>
-                <h3>WordPress <br> Solutions</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-              </div> 
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
-                <div class="wrap-icon mb-3">
-                   <img src="{{ asset('assets/images/svg/005-line-chart.svg') }}" alt="Image" width="45">
-                </div>
-                <h3>Mobile <br> Applications</h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-              </div> 
-            </div>
-
+          <!-- Sistem Informasi -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
+              <div class="wrap-icon mb-3">
+                <img src="{{ asset('assets/images/svg/001-options.svg') }}" alt="Image" width="45">
+              </div>
+              <h3>Sistem <br> Informasi</h3>
+              <p>Perancangan dan implementasi sistem informasi berbasis web untuk mendukung operasional bisnis dan organisasi.</p>
+            </div> 
           </div>
+
+          <!-- Data Analysis -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
+              <div class="wrap-icon mb-3">
+                <img src="{{ asset('assets/images/svg/005-line-chart.svg') }}" alt="Image" width="45">
+              </div>
+              <h3>Data Analysis <br> & Reporting</h3>
+              <p>Mengolah dan menganalisis data untuk menghasilkan laporan dan insight yang berguna bagi pengambilan keputusan.</p>
+            </div> 
+          </div>
+
+          <!-- Android app -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
+              <div class="wrap-icon mb-3">
+                <img src="{{ asset('assets/images/svg/003-contact-book.svg') }}" alt="Image" width="45">
+              </div>
+              <h3>Android App <br> (Pemula)</h3>
+              <p>Pembuatan aplikasi Android sederhana untuk kebutuhan seperti input data, demo sistem, atau kalkulasi ringan.</p>
+            </div> 
+          </div>
+
+          <!-- Database -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
+              <div class="wrap-icon mb-3">
+                <img src="{{ asset('assets/images/svg/007-database.svg') }}" alt="Image" width="45">
+              </div>
+              <h3>Database <br> Management</h3>
+              <p>Perancangan, optimasi, dan manajemen database menggunakan MySQL, PostgreSQL, hingga integrasi ke aplikasi web.</p>
+            </div> 
+          </div>
+
+          <!-- Scrum -->
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
+              <div class="wrap-icon mb-3">
+                <img src="{{ asset('assets/images/svg/008-agile.svg') }}" alt="Image" width="45">
+              </div>
+              <h3>Agile & <br> Scrum</h3>
+              <p>Pengalaman kerja dengan metode Scrum, termasuk sprint planning, stand-up meeting, dan kolaborasi tim.</p>
+            </div> 
+          </div>
+
         </div>
       </div>
+    </div>
 
-      <div class="unslate_co--section section-counter" id="skills-section">
+
+      <div class="unslate_co--section section-counter" id="skills-section" style="background: #000; color: #fff; padding: 2rem 0;">
         <div class="container">
           <div class="section-heading-wrap text-center mb-5">
             <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Skills</span></h2>
-            <span class="gsap-reveal"> <img src="{{ asset('assets/images/divider.png') }}" alt="divider" width="76"></span>
+            <span class="gsap-reveal">
+              <img src="{{ asset('assets/images/divider.png') }}" alt="divider" width="76">
+            </span>
           </div>
 
-
-          <div class="row pt-5">
-            <div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="90">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">WordPress</span>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <h5>HTML </h5>
+              <div class="progress">
+                <div class="progress-bar bg-primary" data-aos="fade-right" data-width="100%" style="width: 0">
+                <span class="skill-percent">0%</span>
+                </div>
               </div>
             </div>
-            <div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="99">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">HTML/CSS</span>
+            <div class="col-md-6 mb-4">
+              <h5>CSS</h5>
+              <div class="progress">
+                <div class="progress-bar bg-primary" data-aos="fade-right" data-width="10%" style="width: 0">
+                <span class="skill-percent">0%</span>
+                </div>
               </div>
             </div>
-            <div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="95">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">jQuery</span>
+            <div class="col-md-6 mb-4">
+              <h5>JavaScript </h5>
+              <div class="progress">
+                <div class="progress-bar bg-primary" data-aos="fade-right"  data-width="75%" style="width: 0">
+                <span class="skill-percent">0%</span>
+                </div>
               </div>
             </div>
-            <div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="100">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">Design</span>
+            <div class="col-md-6 mb-4">
+              <h5>PHP </h5>
+              <div class="progress">
+                <div class="progress-bar bg-primary" data-aos="fade-right"  data-width="80%" style="width: 0">
+                <span class="skill-percent">0%</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <h5>WordPress/CMS </h5>
+              <div class="progress">
+                <div class="progress-bar bg-primary" data-aos="fade-right"  data-width="90%" style="width: 0">
+                <span class="skill-percent">0%</span></div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-4">
+              <h5>Photoshop </h5>
+              <div class="progress">
+                <div class="progress-bar bg-primary" data-aos="fade-right"  data-width="55%"style="width: 0">
+                <span class="skill-percent">0%</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- END .counter -->
+      <style>
+        .progress-bar {
+          position: relative;
+          background-color: #dc3545;
+          width: 0;
+          min-width: 2px;
+          transition: width 2.5s ease-in-out;
+          will-change: width;
+        }
+        .progress-bar {
+          background-color: #dc3545; 
+          /* transition: width 3.5s ease; */
+           width: 0;
+           transition: width 5s ease-in-out;
+        }
+         .skill-percent {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: bold;
+            color: #fff;
+          }
+      </style>
 
       <div class="unslate_co--section" id="testimonial-section">
         <div class="container">
@@ -714,6 +770,67 @@
 
   <script src="{{ asset('assets/js/scripts-dist.js') }}"></script>
   <script src="{{ asset('assets/js/main.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    AOS.init({ once: true });
+
+    const bars = document.querySelectorAll('.progress-bar');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const targetWidth = el.getAttribute('data-width');
+          const percentText = el.querySelector('.skill-percent');
+          const targetPercent = parseInt(targetWidth);
+
+          // Reset bar and number
+          el.style.transition = 'none';
+          el.style.width = '0';
+          if (percentText) percentText.textContent = '0%';
+
+          // Animate width and number
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              el.style.transition = 'width 2.5s ease-in-out';
+              el.style.width = targetWidth;
+
+              // Animate the number
+              let start = null;
+              const duration = 2500;
+
+              function animateNumber(timestamp) {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                const percent = Math.min(Math.round((progress / duration) * targetPercent), targetPercent);
+                if (percentText) percentText.textContent = percent + '%';
+                if (percent < targetPercent) {
+                  requestAnimationFrame(animateNumber);
+                }
+              }
+
+              requestAnimationFrame(animateNumber);
+            });
+          });
+
+          observer.unobserve(el);
+        }
+      });
+    }, {
+      threshold: 0.4
+    });
+
+    bars.forEach(bar => {
+      observer.observe(bar);
+    });
+  });
+</script>
+
+
+
+
 
 
   </body>
