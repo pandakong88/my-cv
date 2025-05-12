@@ -112,8 +112,8 @@
           <div class="row align-items-center">
               
             <div class="col-md-7 mx-auto text-center">
-              <h1 class="heading gsap-reveal-hero">Arjunanda</h1>
-              <h2 class="subheading gsap-reveal-hero">Programmer muda dengan semangat inovasi, siap berkarya dan berkembang di dunia teknologi.</h2>
+              <h1 class="heading gsap-reveal-hero">{{ $profile->nickname }}</h1>
+              <h2 class="subheading gsap-reveal-hero">{{ $profile->slogan }}.</h2>
             </div>
 
           </div>
@@ -351,7 +351,7 @@
             </div>
             <div class="col-lg-4 pr-lg-5">
               <h3 class="mb-4 heading-h3"><span class="gsap-reveal">Crafting code, shaping ideas</span></h3>
-              <p class="lead gsap-reveal">Saya adalah lulusan Sistem Informasi dengan ketertarikan tinggi pada web development dan solusi digital berbasis Laravel & CodeIgniter.</p>
+              <p class="lead gsap-reveal">{{ $profile->about }}</p>
               <p class="mb-4 gsap-reveal">Berpengalaman membangun website fungsional menggunakan PHP, JavaScript, serta memahami OOP, integrasi API, dan testing. Selalu siap belajar, beradaptasi, dan tumbuh bersama teknologi.</p>
               <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Download CV</a></p>
               <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Lihat CV</a></p>
@@ -618,27 +618,27 @@
             <div class="col-md-4">
               <ul class="list-inline d-flex justify-content-center justify-content-md-start flex-wrap gap-3 mb-0">
                 <li class="list-inline-item">
-                  <a href="#" class="text-light fs-5" title="GitHub">
+                  <a href="{{ $profile->github }}" class="text-light fs-5" title="GitHub">
                     <i class="fab fa-github"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#" class="text-light fs-5" title="LinkedIn">
+                  <a href="{{ $profile->linkedin  }}" class="text-light fs-5" title="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#" class="text-light fs-5" title="Instagram">
+                  <a href="{{ $profile->instagram }}" class="text-light fs-5" title="Instagram">
                     <i class="fab fa-instagram"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#" class="text-light fs-5" title="WhatsApp">
+                  <a href="{{ $profile->whatsapp  }}" class="text-light fs-5" title="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="mailto:emailkamu@example.com" class="text-light fs-5" title="Email">
+                  <a href="mailto:{{ $profile->email }}" class="text-light fs-5" title="Email">
                     <i class="fas fa-envelope"></i>
                   </a>
                 </li>
@@ -648,7 +648,7 @@
             <!-- Contact Info -->
             <div class="col-md-4">
               <p class="small mb-1"><i class="fas fa-map-marker-alt me-2 text-danger"></i>Yogyakarta, Indonesia</p>
-              <p class="small mb-0"><i class="fas fa-envelope me-2 text-danger"></i><a href="mailto:emailkamu@example.com" class="text-light text-decoration-none"> emailkamu@example.com</a></p>
+              <p class="small mb-0"><i class="fas fa-envelope me-2 text-danger"></i><a href="mailto:{{ $profile->email }}" class="text-light text-decoration-none"> {{ $profile->email }}</a></p>
             </div>
           </div>
 
