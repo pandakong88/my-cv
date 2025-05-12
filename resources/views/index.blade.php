@@ -420,7 +420,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
               <div class="wrap-icon mb-3">
-                <img src="{{ asset('assets/images/svg/007-database.svg') }}" alt="Image" width="45">
+                <img src="{{ asset('assets/images/svg/database.svg') }}" alt="Image" width="45">
               </div>
               <h3>Database <br> Management</h3>
               <p>Perancangan, optimasi, dan manajemen database menggunakan MySQL, PostgreSQL, hingga integrasi ke aplikasi web.</p>
@@ -431,7 +431,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
               <div class="wrap-icon mb-3">
-                <img src="{{ asset('assets/images/svg/008-agile.svg') }}" alt="Image" width="45">
+                <img src="{{ asset('assets/images/svg/srum.svg') }}" alt="Image" width="45">
               </div>
               <h3>Agile & <br> Scrum</h3>
               <p>Pengalaman kerja dengan metode Scrum, termasuk sprint planning, stand-up meeting, dan kolaborasi tim.</p>
