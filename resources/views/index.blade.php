@@ -62,7 +62,7 @@
               <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
                 <li class="has-children">
                   <a href="#home-section" class="nav-link">Home</a>
-                  <ul class="dropdown">
+                  {{-- <ul class="dropdown">
                     <li>
                       <a href="index.html">Hero Image BG</a>
                     </li>
@@ -78,7 +78,7 @@
                     <li>
                       <a href="index-right-menu.html">Right Menu</a>
                     </li>
-                  </ul>
+                  </ul> --}}
                 </li>
                 <li><a href="#portfolio-section" class="nav-link">Portfolio</a></li>
                 <li><a href="#about-section" class="nav-link">About</a></li>
@@ -86,14 +86,17 @@
               </ul>
             </div>
             <div class="site-logo pos-absolute">
-              <a href="index.html" class="unslate_co--site-logo">Unfold<span>.</span></a>
+              <a href="index.html" class="unslate_co--site-logo">PandaKong<span>.</span>
+                <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" style="height: 40px;" />
+              </a>
             </div>
             <div class="col-md-5 text-right text-lg-left">
               <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
                 <li><a href="#skills-section" class="nav-link">Skills</a></li>
-                <li><a href="#testimonial-section" class="nav-link">Testimonial</a></li>
-                <li><a href="#journal-section" class="nav-link">Journal</a></li>
-                <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                {{-- <li><a href="#testimonial-section" class="nav-link">Testimonial</a></li> --}}
+                <li><a href="#certificate-section" class="nav-link">Certificates</a></li>
+                <li><a href="#certificate-section" class="nav-link">Contact</a></li>
+                <li><a href="#certificate-section" class="nav-link">My CV</a></li>
               </ul>
 
               <ul class="site-nav-ul-none-onepage text-right d-inline-block d-lg-none">
@@ -475,8 +478,8 @@
       <style>
         .testimonial-inner-bg {
           min-height: 250px; /* atur sesuai kebutuhan, misalnya 250-300 */
-  display: flex;
-  align-items: center;
+          display: flex;
+          align-items: center;
           position: relative;
           background-color: #222; /* atau warna gelap sesuai tema */
           border-bottom: 4px solid #e63946; /* warna merah aksen */
@@ -547,7 +550,7 @@
             </div>
 
             <!-- Contact Info -->
-            <div class="col-md-4">
+            <div class="col-md-4" >
               <p class="small mb-1"><i class="fas fa-map-marker-alt me-2 text-danger"></i>Yogyakarta, Indonesia</p>
               <p class="small mb-0"><i class="fas fa-envelope me-2 text-danger"></i><a href="mailto:{{ $profile->email }}" class="text-light text-decoration-none"> {{ $profile->email }}</a></p>
             </div>

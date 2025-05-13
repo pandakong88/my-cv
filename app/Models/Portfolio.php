@@ -9,9 +9,14 @@ class Portfolio extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'image',
-        'title',
-        'description',
+        'name',
+        'short_description',
+        'detailed_description',
+        'images',
         'link',
+    ];
+
+    protected $casts = [
+        'images' => 'array',
     ];
 }
