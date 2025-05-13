@@ -351,8 +351,8 @@
             </div>
             <div class="col-lg-4 pr-lg-5">
               <h3 class="mb-4 heading-h3"><span class="gsap-reveal">Crafting code, shaping ideas</span></h3>
-              <p class="lead gsap-reveal">{{ $profile->about }}</p>
-              <p class="mb-4 gsap-reveal">Berpengalaman membangun website fungsional menggunakan PHP, JavaScript, serta memahami OOP, integrasi API, dan testing. Selalu siap belajar, beradaptasi, dan tumbuh bersama teknologi.</p>
+              <p class="mb-4 gsap-reveal" style="text-align: justify;">{!! nl2br(e($profile->about)) !!}</p>
+              {{-- <p class="mb-4 gsap-reveal">Berpengalaman membangun website fungsional menggunakan PHP, JavaScript, serta memahami OOP, integrasi API, dan testing. Selalu siap belajar, beradaptasi, dan tumbuh bersama teknologi.</p> --}}
               <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Download CV</a></p>
               <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Lihat CV</a></p>
             </div>
@@ -372,72 +372,18 @@
 
         <div class="row gutter-v3">
           
-          <!-- Web Development -->
+          @foreach ($service as $serviceItem)
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
               <div class="wrap-icon mb-3">
-                <img src="{{ asset('assets/images/svg/004-percentage.svg') }}" alt="Image" width="45">
+                <img src="{{ asset('assets/images/svg/' . $serviceItem->icon) }}" alt="Image" width="45">
               </div>
-              <h3>Web <br> Development</h3>
-              <p>Membangun website dinamis dan responsif menggunakan HTML, CSS, JavaScript, dan framework PHP seperti Laravel & CI.</p>
+              <h3>{!! nl2br(e($serviceItem->nama)) !!}</h3>
+              <p>{{ $serviceItem->deskripsi }}</p>
             </div> 
           </div>
-
-          <!-- Sistem Informasi -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
-              <div class="wrap-icon mb-3">
-                <img src="{{ asset('assets/images/svg/001-options.svg') }}" alt="Image" width="45">
-              </div>
-              <h3>Sistem <br> Informasi</h3>
-              <p>Perancangan dan implementasi sistem informasi berbasis web untuk mendukung operasional bisnis dan organisasi.</p>
-            </div> 
-          </div>
-
-          <!-- Data Analysis -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
-              <div class="wrap-icon mb-3">
-                <img src="{{ asset('assets/images/svg/005-line-chart.svg') }}" alt="Image" width="45">
-              </div>
-              <h3>Data Analysis <br> & Reporting</h3>
-              <p>Mengolah dan menganalisis data untuk menghasilkan laporan dan insight yang berguna bagi pengambilan keputusan.</p>
-            </div> 
-          </div>
-
-          <!-- Android app -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
-              <div class="wrap-icon mb-3">
-                <img src="{{ asset('assets/images/svg/003-contact-book.svg') }}" alt="Image" width="45">
-              </div>
-              <h3>Android App <br> (Pemula)</h3>
-              <p>Pembuatan aplikasi Android sederhana untuk kebutuhan seperti input data, demo sistem, atau kalkulasi ringan.</p>
-            </div> 
-          </div>
-
-          <!-- Database -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
-              <div class="wrap-icon mb-3">
-                <img src="{{ asset('assets/images/svg/database.svg') }}" alt="Image" width="45">
-              </div>
-              <h3>Database <br> Management</h3>
-              <p>Perancangan, optimasi, dan manajemen database menggunakan MySQL, PostgreSQL, hingga integrasi ke aplikasi web.</p>
-            </div> 
-          </div>
-
-          <!-- Scrum -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
-              <div class="wrap-icon mb-3">
-                <img src="{{ asset('assets/images/svg/srum.svg') }}" alt="Image" width="45">
-              </div>
-              <h3>Agile & <br> Scrum</h3>
-              <p>Pengalaman kerja dengan metode Scrum, termasuk sprint planning, stand-up meeting, dan kolaborasi tim.</p>
-            </div> 
-          </div>
-
+          @endforeach
+          
         </div>
       </div>
     </div>
@@ -453,53 +399,16 @@
           </div>
 
           <div class="row">
+            @foreach ($skill as $skill)
             <div class="col-md-6 mb-4">
-              <h5>HTML </h5>
+              <h5>{{ $skill->nama_skill }} </h5>
               <div class="progress">
-                <div class="progress-bar bg-primary" data-aos="fade-right" data-width="100%" style="width: 0">
-                <span class="skill-percent">0%</span>
+                <div class="progress-bar bg-primary" data-aos="fade-right" data-width="{{ $skill->persentase }}%" style="width: 0">
+                <span class="skill-percent">{{ $skill->persentase }} %</span>
                 </div>
               </div>
             </div>
-            <div class="col-md-6 mb-4">
-              <h5>CSS</h5>
-              <div class="progress">
-                <div class="progress-bar bg-primary" data-aos="fade-right" data-width="10%" style="width: 0">
-                <span class="skill-percent">0%</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <h5>JavaScript </h5>
-              <div class="progress">
-                <div class="progress-bar bg-primary" data-aos="fade-right"  data-width="75%" style="width: 0">
-                <span class="skill-percent">0%</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <h5>PHP </h5>
-              <div class="progress">
-                <div class="progress-bar bg-primary" data-aos="fade-right"  data-width="80%" style="width: 0">
-                <span class="skill-percent">0%</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <h5>WordPress/CMS </h5>
-              <div class="progress">
-                <div class="progress-bar bg-primary" data-aos="fade-right"  data-width="90%" style="width: 0">
-                <span class="skill-percent">0%</span></div>
-              </div>
-            </div>
-            <div class="col-md-6 mb-4">
-              <h5>Photoshop </h5>
-              <div class="progress">
-                <div class="progress-bar bg-primary" data-aos="fade-right"  data-width="55%"style="width: 0">
-                <span class="skill-percent">0%</span>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
       </div>
@@ -530,44 +439,33 @@
 
       <div class="unslate_co--section " id="certificate-section">
         <div class="container">
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider">
-              <span class="gsap-reveal">My Certificates</span>
-            </h2>
-            <span class="gsap-reveal">
-              <img src="{{ asset('assets/images/divider.png') }}" alt="divider" width="76">
-            </span>
-          </div>
+            <div class="section-heading-wrap text-center mb-5">
+              <h2 class="heading-h2 text-center divider">
+                <span class="gsap-reveal">My Certificates</span>
+              </h2>
+              <span class="gsap-reveal">
+                <img src="{{ asset('assets/images/divider.png') }}" alt="divider" width="76">
+              </span>
+            </div>
 
-          <!-- Carousel Mulai -->
-          <div class="owl-carousel testimonial-slider" data-aos="fade-up">
-            
-            <!-- Sertifikat 1 -->
-            <div>
-              <div class="testimonial-inner-bg p-4 row align-items-center text-start">
-                <div class="col-12 col-md-4 mb-3 mb-md-0 text-center">
-                  <img src="{{ asset('assets/images/work_9_a_md.jpg') }}" alt="..." class="img-fluid rounded shadow" style="max-width: 250px;">
+            <!-- Carousel Mulai -->
+            <div class="owl-carousel testimonial-slider" data-aos="fade-up"> 
+              <!-- Sertifikat 1 -->
+              @foreach ($certificate as $certificate)
+                <div class="testimonial-inner-bg p-4 row align-items-center text-start">
+                  <div class="col-12 col-md-4 mb-3 mb-md-0 text-center">
+                    <img src="{{ asset('storage/' . $certificate->image) }}" alt="{{ $certificate->nama }}" class="img-fluid rounded shadow" style="max-width: 250px;">
+                  </div>
+                  <div class="col-12 col-md-8">
+                    <h3 class="mb-2 fw-bold">{{ $certificate->nama }}</h3>
+                    <p class="mb-2">{{ $certificate->deskripsi }}</p>
+                    <span class="text-muted fst-italic">Diperoleh pada {{ $certificate->tanggal_diperoleh }} </span>
+                  </div>
                 </div>
-                <div class="col-12 col-md-8">
-                  <h3 class="mb-2 fw-bold">Laravel Fundamental</h3>
-                  <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat minus dolorem sed optio explicabo laboriosam odit a nobis, amet iusto numquam, non, blanditiis harum ullam. Magnam, doloremque. Quae, doloremque maiores.</p>
-                  <span class="text-muted fst-italic">Diperoleh pada Maret 2025</span>
-                </div>
-              </div>
-            </div>
-              <div class="testimonial-inner-bg p-4 row align-items-center text-start">
-                <div class="col-12 col-md-4 mb-3 mb-md-0 text-center">
-                  <img src="{{ asset('assets/images/work_9_a_md.jpg') }}" alt="..." class="img-fluid rounded shadow" style="max-width: 250px;">
-                </div>
-                <div class="col-12 col-md-8">
-                  <h3 class="mb-2 fw-bold">Pytonnn</h3>
-                  <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sunt, reprehenderit sit ipsam tenetur blanditiis? Nisi quos iste praesentium. Officia enim quam reiciendis dicta nesciunt commodi consequuntur quibusdam itaque eligendi!</p>
-                  <span class="text-muted fst-italic">Diperoleh pada Maret 2025</span>
-                </div>
-              </div>
+              @endforeach
+              
             </div>
             
-            <!-- Tambah sertifikat lain di sini -->
 
           </div>
           <!-- Carousel Selesai -->
@@ -576,6 +474,9 @@
       <!-- END testimonial -->
       <style>
         .testimonial-inner-bg {
+          min-height: 250px; /* atur sesuai kebutuhan, misalnya 250-300 */
+  display: flex;
+  align-items: center;
           position: relative;
           background-color: #222; /* atau warna gelap sesuai tema */
           border-bottom: 4px solid #e63946; /* warna merah aksen */
