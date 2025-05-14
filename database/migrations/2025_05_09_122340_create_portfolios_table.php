@@ -18,6 +18,10 @@ return new class extends Migration
             $table->longText('detailed_description')->nullable();
             $table->json('images')->nullable(); // untuk gambar multiple
             $table->string('link')->nullable();
+            
+            $table->date('project_date')->nullable();
+            $table->string('role')->nullable();
+            $table->string('client')->nullable();
             $table->timestamps();
         });
     }

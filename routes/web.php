@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
-Route::get('/about', [MainController::class, 'show']);
+Route::get('/', [MainController::class, 'show']);
 Route::get('/portfolio/{id}', [MainController::class, 'portfolio_detail'])->name('portfolio.show');
 

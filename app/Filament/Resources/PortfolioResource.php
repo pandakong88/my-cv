@@ -14,13 +14,14 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\RichEditor;
 
+use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\TextInput\Mask;
-use Filament\Tables\Actions\DeleteBulkAction;
 
+use Filament\Tables\Actions\DeleteBulkAction;
 use App\Filament\Resources\PortfolioResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PortfolioResource\RelationManagers;
@@ -41,6 +42,9 @@ class PortfolioResource extends Resource
             TextInput::make('name')->required()->label('Nama Project'),
             Textarea::make('short_description')->label('Deskripsi Singkat'),
             RichEditor::make('detailed_description')->label('Penjelasan Detail'),
+            TextInput::make('client')->label('Nama Client'),
+            TextInput::make('role')->label('e.x Fullstack Developer'),
+            DatePicker::make('project_date'),
             FileUpload::make('images')
                 ->multiple()
                 ->image()
@@ -49,6 +53,7 @@ class PortfolioResource extends Resource
             TextInput::make('link')
                 ->url()
                 ->label('Link Website'),
+            
         ]);
     }
 

@@ -243,7 +243,7 @@
           <div class="row mt-5 justify-content-between">
             <div class="col-lg-7 mb-5 mb-lg-0">
               <figure class="dotted-bg gsap-reveal-img ">
-                 <img src="{{ asset('assets/images/about_me_pic2.jpg') }}" alt="Image" class="img-fluid">
+                 <img src="{{ asset('assets/images/hitam putih.jpg') }}" alt="Image" class="img-fluid">
               </figure>
             </div>
             <div class="col-lg-4 pr-lg-5">
@@ -416,28 +416,28 @@
             <div class="col-md-4">
               <ul class="list-inline d-flex justify-content-center justify-content-md-start flex-wrap gap-3 mb-0">
                 <li class="list-inline-item">
-                  <a href="{{ $profile->github }}" class="text-light fs-5" title="GitHub">
-                    <i class="fab fa-github"></i>
+                  <a href="{{ $profile->github }}" class="text-light fs-1" title="GitHub">
+                    <i class="fab fa-github fa-2x"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="{{ $profile->linkedin  }}" class="text-light fs-5" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
+                  <a href="{{ $profile->linkedin  }}" class="text-light fs-1" title="LinkedIn">
+                    <i class="fab fa-linkedin-in fa-2x"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="{{ $profile->instagram }}" class="text-light fs-5" title="Instagram">
-                    <i class="fab fa-instagram"></i>
+                  <a href="{{ $profile->instagram }}" class="text-light fs-1" title="Instagram">
+                    <i class="fab fa-instagram fa-2x"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="{{ $profile->whatsapp  }}" class="text-light fs-5" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
+                  <a href="{{ $profile->whatsapp  }}" class="text-light fs-1" title="WhatsApp">
+                    <i class="fab fa-whatsapp fa-2x"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="mailto:{{ $profile->email }}" class="text-light fs-5" title="Email">
-                    <i class="fas fa-envelope"></i>
+                  <a href="mailto:{{ $profile->email }}" class="text-light fs-1" title="Email">
+                    <i class="fas fa-envelope fa-2x"></i>
                   </a>
                 </li>
               </ul>
