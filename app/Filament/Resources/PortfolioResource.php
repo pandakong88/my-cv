@@ -8,20 +8,24 @@ use Filament\Forms\Form;
 use App\Models\Portfolio;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
+use Filament\Pages\Actions\EditAction;
 use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
-use Filament\Tables\Columns\ImageColumn;
 
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\TextInput\Mask;
+use Filament\Tables\Actions\DeleteBulkAction;
 
 use App\Filament\Resources\PortfolioResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PortfolioResource\RelationManagers;
-
-use Filament\Forms\Components\TextInput\Mask;
+use App\Filament\Resources\PortfolioResource\Pages\ListPortfolios;
+use App\Filament\Resources\PortfolioResource\Pages\CreatePortfolio;
 
 class PortfolioResource extends Resource
 {
@@ -53,9 +57,13 @@ class PortfolioResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([
-            Tables\Columns\TextColumn::make('name')->label('Nama Project')->searchable(),
-            Tables\Columns\TextColumn::make('short_description')->limit(30)->label('Deskripsi'),
-            Tables\Columns\TextColumn::make('link')->label('Link')->url(),
+            TextColumn::make('name')->label('Nama Project')->searchable(),
+            TextColumn::make('short_description')->limit(30)->label('Deskripsi'),
+            TextColumn::make('link')
+                ->label('Link')
+                ->url(fn ($record) => $record->link)
+                ->openUrlInNewTab(),
+
         ])->filters([])->actions([
             Tables\Actions\EditAction::make(),
         ])->bulkActions([

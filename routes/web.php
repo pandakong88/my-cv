@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/about', [MainController::class, 'show']);
+Route::get('/portfolio/{id}', [MainController::class, 'portfolio_detail'])->name('portfolio.show');
+

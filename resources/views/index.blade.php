@@ -1,115 +1,8 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Unfold &mdash; A onepage portfolio HTML template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <meta name="description" content="">
-    <meta name="keywords" content="html, css, javascript, jquery">
-    <meta name="author" content="">
-
-    
-    <link rel="stylesheet" href= {{ asset("assets/css/vendor/icomoon/style.css") }}>
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/icomoon/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/aos.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/jquery.fancybox.min.css') }}">
-
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-
-
-    <!-- Theme Style -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"> 
-
-  </head>
+@include('partials.header')
   <body data-spy="scroll" data-target=".site-nav-target" data-offset="200">
 
-    <nav class="unslate_co--site-mobile-menu">
-      <div class="close-wrap d-flex">
-        <a href="#" class="d-flex ml-auto js-menu-toggle">
-          <span class="close-label">Close</span>
-          <div class="close-times">
-            <span class="bar1"></span>
-            <span class="bar2"></span>
-          </div>
-        </a>
-      </div>
-      <div class="site-mobile-inner"></div>
-    </nav>
-
-
-    <div class="unslate_co--site-wrap">
-
-      <div class="unslate_co--site-inner">
-
-        <div class="lines-wrap">
-          <div class="lines-inner">
-            <div class="lines"></div>
-          </div>
-        </div>
-        <!-- END lines -->
-      
-      <nav class="unslate_co--site-nav site-nav-target">
-
-        <div class="container">
-        
-          <div class="row align-items-center justify-content-between text-left">
-            <div class="col-md-5 text-right">
-              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
-                <li class="has-children">
-                  <a href="#home-section" class="nav-link">Home</a>
-                  {{-- <ul class="dropdown">
-                    <li>
-                      <a href="index.html">Hero Image BG</a>
-                    </li>
-                    <li>
-                      <a href="index-video.html">Video BG</a>
-                    </li>
-                    <li>
-                      <a href="index-hero-slider.html">Hero Slider</a>
-                    </li>
-                    <li>
-                      <a href="index-sidebar-menu.html">Sidebar Menu</a>
-                    </li>
-                    <li>
-                      <a href="index-right-menu.html">Right Menu</a>
-                    </li>
-                  </ul> --}}
-                </li>
-                <li><a href="#portfolio-section" class="nav-link">Portfolio</a></li>
-                <li><a href="#about-section" class="nav-link">About</a></li>
-                <li><a href="#services-section" class="nav-link">Services</a></li>
-              </ul>
-            </div>
-            <div class="site-logo pos-absolute">
-              <a href="index.html" class="unslate_co--site-logo">PandaKong<span>.</span>
-                <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" style="height: 40px;" />
-              </a>
-            </div>
-            <div class="col-md-5 text-right text-lg-left">
-              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
-                <li><a href="#skills-section" class="nav-link">Skills</a></li>
-                {{-- <li><a href="#testimonial-section" class="nav-link">Testimonial</a></li> --}}
-                <li><a href="#certificate-section" class="nav-link">Certificates</a></li>
-                <li><a href="#certificate-section" class="nav-link">Contact</a></li>
-                <li><a href="#certificate-section" class="nav-link">My CV</a></li>
-              </ul>
-
-              <ul class="site-nav-ul-none-onepage text-right d-inline-block d-lg-none">
-                <li><a href="#" class="js-menu-toggle">Menu</a></li>
-              </ul>
-
-            </div>
-          </div>
-        </div>
-
-      </nav>
-      <!-- END nav -->
-
+    {{-- NAAVBAR --}}
+    @include('partials.navbar')
       <div class="cover-v1 jarallax" style="background-image: url('{{ asset('assets/images/cover_bg_2.jpg') }}');" id="home-section">
         <div class="container">
           <div class="row align-items-center">
@@ -142,27 +35,27 @@
           <div id="portfolio-single-holder"></div>
 
           <div class="portfolio-wrapper">
-
-            {{-- <div class="d-flex align-items-center mb-4 gsap-reveal gsap-reveal-filter">
-              <h2 class="mr-auto heading-h2"><span class="gsap-reveal">Portfolio</span></h2>
-
-              <a href="#" class="text-white js-filter d-inline-block d-lg-none">Filter</a>
-              
-              <div class="filter-wrap">
-                <div class="filter ml-auto" id="filters">
-                  <a href="#" class="active" data-filter="*">All</a>
-                  <a href="#" data-filter=".web">Web</a>
-                  <a href="#" data-filter=".branding">Branding</a>
-                  <a href="#" data-filter=".illustration">Illustration</a>
-                  <a href="#" data-filter=".packaging">Packaging</a>
-                </div>
-              </div>
-            </div> --}}
-
-
-            
             <div id="posts" class="row gutter-isotope-item">
-              <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
+              
+                @foreach ($portfolios as $item)
+                    <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
+                        <a href="{{ route('portfolio.show', $item->id) }}" class="portfolio-item isotope-item gsap-reveal-img" data-id="{{ $item->id }}"  target="_blank" rel="noopener">
+                            <div class="overlay">
+                                <span class="wrap-icon icon-link2"></span>
+                                <div class="portfolio-item-content">
+                                    <h3>{{ $item->name }}</h3>
+                                    {{-- <p>{{ $item->short_description }}</p> --}}
+                                </div>
+                            </div>
+
+                            @if ($item->images && count($item->images))
+                                <img src="{{ asset('storage/' . $item->images[0]) }}" class="lazyload img-fluid" alt="Images" />
+                            @endif
+                        </a>
+                    </div>
+                @endforeach
+
+              {{-- <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
                 <a href="portfolio-single-1.html" class="portfolio-item ajax-load-page isotope-item gsap-reveal-img" data-id="1">
                     <div class="overlay">
                       <span class="wrap-icon icon-link2"></span>
@@ -173,8 +66,9 @@
                     </div>
                      <img src="{{ asset('assets/images/work_1_md.jpg') }}" class="lazyload  img-fluid" alt="Images" />
                   </a>
-              </div>
-              <div class="item branding packaging illustration col-sm-6 col-md-6 col-lg-4 isotope-mb-2 ">
+              </div> --}}
+              
+              {{-- <div class="item branding packaging illustration col-sm-6 col-md-6 col-lg-4 isotope-mb-2 ">
                 <a href="portfolio-single-3.html" class="portfolio-item ajax-load-page item-portrait isotope-item gsap-reveal-img" data-id="3">
                     <div class="overlay">
                       <span class="wrap-icon icon-link2"></span>
@@ -278,7 +172,7 @@
                     </div>
                      <img src="{{ asset('assets/images/work_9_a_md.jpg') }}" class="lazyload  img-fluid" alt="Images" />
                   </a>
-              </div>
+              </div> --}}
 
             </div>
             
@@ -565,17 +459,16 @@
       </footer>
 
       <style>
-      #footer a:hover {
-        color: #e63946 !important;
-        transition: 0.3s;
-      }
-      #footer i {
-        transition: transform 0.3s;
-      }
-      #footer i:hover {
-        transform: scale(1.2);
-      }
-      
+        #footer a:hover {
+          color: #e63946 !important;
+          transition: 0.3s;
+        }
+        #footer i {
+          transition: transform 0.3s;
+        }
+        #footer i:hover {
+          transform: scale(1.2);
+        }
       </style>
 
 
@@ -593,61 +486,61 @@
   <script src="{{ asset('assets/js/main.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    AOS.init({ once: true });
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      AOS.init({ once: true });
 
-    const bars = document.querySelectorAll('.progress-bar');
+      const bars = document.querySelectorAll('.progress-bar');
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const targetWidth = el.getAttribute('data-width');
-          const percentText = el.querySelector('.skill-percent');
-          const targetPercent = parseInt(targetWidth);
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const targetWidth = el.getAttribute('data-width');
+            const percentText = el.querySelector('.skill-percent');
+            const targetPercent = parseInt(targetWidth);
 
-          // Reset bar and number
-          el.style.transition = 'none';
-          el.style.width = '0';
-          if (percentText) percentText.textContent = '0%';
+            // Reset bar and number
+            el.style.transition = 'none';
+            el.style.width = '0';
+            if (percentText) percentText.textContent = '0%';
 
-          // Animate width and number
-          requestAnimationFrame(() => {
+            // Animate width and number
             requestAnimationFrame(() => {
-              el.style.transition = 'width 2.5s ease-in-out';
-              el.style.width = targetWidth;
+              requestAnimationFrame(() => {
+                el.style.transition = 'width 2.5s ease-in-out';
+                el.style.width = targetWidth;
 
-              // Animate the number
-              let start = null;
-              const duration = 2500;
+                // Animate the number
+                let start = null;
+                const duration = 2500;
 
-              function animateNumber(timestamp) {
-                if (!start) start = timestamp;
-                const progress = timestamp - start;
-                const percent = Math.min(Math.round((progress / duration) * targetPercent), targetPercent);
-                if (percentText) percentText.textContent = percent + '%';
-                if (percent < targetPercent) {
-                  requestAnimationFrame(animateNumber);
+                function animateNumber(timestamp) {
+                  if (!start) start = timestamp;
+                  const progress = timestamp - start;
+                  const percent = Math.min(Math.round((progress / duration) * targetPercent), targetPercent);
+                  if (percentText) percentText.textContent = percent + '%';
+                  if (percent < targetPercent) {
+                    requestAnimationFrame(animateNumber);
+                  }
                 }
-              }
 
-              requestAnimationFrame(animateNumber);
+                requestAnimationFrame(animateNumber);
+              });
             });
-          });
 
-          observer.unobserve(el);
-        }
+            observer.unobserve(el);
+          }
+        });
+      }, {
+        threshold: 0.4
       });
-    }, {
-      threshold: 0.4
-    });
 
-    bars.forEach(bar => {
-      observer.observe(bar);
+      bars.forEach(bar => {
+        observer.observe(bar);
+      });
     });
-  });
-</script>
+  </script>
 
 
 
