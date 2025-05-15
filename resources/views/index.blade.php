@@ -3,7 +3,7 @@
 
     {{-- NAAVBAR --}}
     @include('partials.navbar')
-      <div class="cover-v1 jarallax" style="background-image: url('{{ asset('assets/images/cover_bg_2.jpg') }}');" id="home-section">
+      <div class="cover-v1 jarallax " style="background-image: url('{{ asset('assets/images/asasasa.jpg') }}');filter: blur(1px);" id="home-section">
         <div class="container">
           <div class="row align-items-center">
               
@@ -243,7 +243,7 @@
           <div class="row mt-5 justify-content-between">
             <div class="col-lg-7 mb-5 mb-lg-0">
               <figure class="dotted-bg gsap-reveal-img ">
-                 <img src="{{ asset('assets/images/hitam putih.jpg') }}" alt="Image" class="img-fluid">
+                 <img src="{{ asset('assets/images/hitam putih.jpg') }}" alt="Image" class="img-fluid ">
               </figure>
             </div>
             <div class="col-lg-4 pr-lg-5">
@@ -251,7 +251,7 @@
               <p class="mb-4 gsap-reveal" style="text-align: justify;">{!! nl2br(e($profile->about)) !!}</p>
               {{-- <p class="mb-4 gsap-reveal">Berpengalaman membangun website fungsional menggunakan PHP, JavaScript, serta memahami OOP, integrasi API, dan testing. Selalu siap belajar, beradaptasi, dan tumbuh bersama teknologi.</p> --}}
               <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Download CV</a></p>
-              <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Lihat CV</a></p>
+              {{-- <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light">Lihat CV</a></p> --}}
             </div>
           </div>
         </div>
@@ -402,77 +402,9 @@
       <!-- Font Awesome (penting untuk ikon sosial) -->
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-      <footer id="footer" class="unslate_co--footer text-light py-4 mt-9">
-        <div class="container">
-          <div class="row gy-4 align-items-center text-center text-md-start">
-            
-            <!-- Branding -->
-            <div class="col-md-4">
-              <h5 class="fw-bold mb-2">Kontak Saya<span class="text-danger">.</span></h5>
-              <p class="text-muted small mb-0">Tertarik kerja sama? Hubungi saya melalui media sosial atau email.</p>
-            </div>
-
-            <!-- Social Media -->
-            <div class="col-md-4">
-              <ul class="list-inline d-flex justify-content-center justify-content-md-start flex-wrap gap-3 mb-0">
-                <li class="list-inline-item">
-                  <a href="{{ $profile->github }}" class="text-light fs-1" title="GitHub">
-                    <i class="fab fa-github fa-2x"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="{{ $profile->linkedin  }}" class="text-light fs-1" title="LinkedIn">
-                    <i class="fab fa-linkedin-in fa-2x"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="{{ $profile->instagram }}" class="text-light fs-1" title="Instagram">
-                    <i class="fab fa-instagram fa-2x"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="{{ $profile->whatsapp  }}" class="text-light fs-1" title="WhatsApp">
-                    <i class="fab fa-whatsapp fa-2x"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="mailto:{{ $profile->email }}" class="text-light fs-1" title="Email">
-                    <i class="fas fa-envelope fa-2x"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="col-md-4" >
-              <p class="small mb-1"><i class="fas fa-map-marker-alt me-2 text-danger"></i>Yogyakarta, Indonesia</p>
-              <p class="small mb-0"><i class="fas fa-envelope me-2 text-danger"></i><a href="mailto:{{ $profile->email }}" class="text-light text-decoration-none"> {{ $profile->email }}</a></p>
-            </div>
-          </div>
-
-          <hr class="my-4 border-secondary">
-
-          <div class="text-center small text-muted">
-            &copy; {{ date('Y') }} Dibuat dengan <i class="fas fa-heart text-danger"></i> oleh <strong>Kamu</strong>
-          </div>
-        </div>
-      </footer>
-
-      <style>
-        #footer a:hover {
-          color: #e63946 !important;
-          transition: 0.3s;
-        }
-        #footer i {
-          transition: transform 0.3s;
-        }
-        #footer i:hover {
-          transform: scale(1.2);
-        }
-      </style>
-
-
+@include('partials.footer')
       
+
     </div>
 
     

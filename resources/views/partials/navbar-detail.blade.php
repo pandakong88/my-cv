@@ -31,28 +31,11 @@
     <div class="col-md-5 text-right">
         <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
         <li class="has-children">
-            <a href="#home-section" class="nav-link">Home</a>
-            {{-- <ul class="dropdown">
-            <li>
-                <a href="index.html">Hero Image BG</a>
-            </li>
-            <li>
-                <a href="index-video.html">Video BG</a>
-            </li>
-            <li>
-                <a href="index-hero-slider.html">Hero Slider</a>
-            </li>
-            <li>
-                <a href="index-sidebar-menu.html">Sidebar Menu</a>
-            </li>
-            <li>
-                <a href="index-right-menu.html">Right Menu</a>
-            </li>
-            </ul> --}}
+            <a href="{{ route('show') }}#home-section" class="nav-link">Home</a>
         </li>
-        <li><a href="#portfolio-section" class="nav-link">Portfolio</a></li>
-        <li><a href="#about-section" class="nav-link">About</a></li>
-        <li><a href="#services-section" class="nav-link">Services</a></li>
+        <li><a href="{{ route('show') }}#portfolio-section" class="nav-link">Portfolio</a></li>
+        <li><a href="{{ route('show') }}#about-section" class="nav-link">About</a></li>
+        <li><a href="{{ route('show') }}#services-section" class="nav-link">Services</a></li>
         </ul>
     </div>
     <div class="site-logo pos-absolute">
@@ -62,15 +45,13 @@
     </div>
     <div class="col-md-5 text-right text-lg-left">
         <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
-        <li><a href="#skills-section" class="nav-link">Skills</a></li>
-        {{-- <li><a href="#testimonial-section" class="nav-link">Testimonial</a></li> --}}
-        <li><a href="#certificate-section" class="nav-link">Certificates</a></li>
-        <li><a href="#certificate-section" class="nav-link">Contact</a></li>
-        {{-- <li><a href="#certificate-section" class="nav-link">My CV</a></li> --}}
+        <li><a href="{{ route('show') }}#skills-section" class="nav-link">Skills</a></li>
+        <li><a href="{{ route('show') }}#certificate-section" class="nav-link">Certificates</a></li>
+        <li><a href="{{ route('show') }}#certificate-section" class="nav-link">Contact</a></li>
         </ul>
 
         <ul class="site-nav-ul-none-onepage text-right d-inline-block d-lg-none">
-        <li><a href="#" class="js-menu-toggle">Menu</a></li>
+        <li><a href="{{ route('show') }}#" class="js-menu-toggle">Menu</a></li>
         </ul>
 
     </div>

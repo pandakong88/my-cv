@@ -18,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('index');
 // });
 
-Route::get('/', [MainController::class, 'show']);
+Route::get('/', [MainController::class, 'show'])->name('show');
 Route::get('/portfolio/{id}', [MainController::class, 'portfolio_detail'])->name('portfolio.show');
 
